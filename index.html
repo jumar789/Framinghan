@@ -41,8 +41,8 @@
     function cantidadDiasMesActual() {
         try {
             let fecha = new Date();
-             var cantidadDiasMesActual = new Date(fecha.getFullYear(), fecha.getMonth() + 1, 0).getDate();  
-             return cantidadDiasMesActual;
+            var cantidadDiasMesActual = new Date(fecha.getFullYear(), fecha.getMonth() + 1, 0).getDate();  
+            return cantidadDiasMesActual;
 
         } catch (e) {
             alert('Error en cantidadDiasMesActual():\n' + e.message);            
