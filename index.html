@@ -1,0 +1,94 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.js" integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI=" crossorigin="anonymous"></script>
+    <title>Dias Clave</title>
+    </head>
+<body >
+    <!-- onload="cantidadDiasMesActual(), calculoPrimerDia();" -->
+    <div>
+        <span id="primerDia"></span>
+        <span id="segundoDia"></span>
+    </div>
+    <script>
+
+    var fecha = new Date();
+    var dia = fecha.getDay();
+    var numero = fecha.getDate();
+    var mes = fecha.getMonth();
+    var anio = fecha.getFullYear(); 
+    var cantidadDiasMesActual = "";
+
+    //Cálculo del primer día clave. 
+    function calculoPrimerDia() {
+        try {
+            if ((dia == 5) && (numero >= 8 && numero < 15 )) {
+            var primerDia = "Dia anormal";
+            document.write (primerDia);
+        } else {
+            var primerDia = "Dia normal";
+            document.write (primerDia);
+        }
+            
+        } catch (e) {
+        alert('Error en calculoPrimerDia():\n' + e.message);
+        }       
+    }                       
+
+    // Cálculo total días del mes actual
+    function cantidadDiasMesActual() {
+        try {
+            let fecha = new Date();
+             var cantidadDiasMesActual = new Date(fecha.getFullYear(), fecha.getMonth() + 1, 0).getDate();  
+             return cantidadDiasMesActual;
+
+        } catch (e) {
+            alert('Error en cantidadDiasMesActual():\n' + e.message);            
+        }
+    }
+
+    switch (cantidadDiasMesActual) {
+        case 28:
+        if ((dia == 5 ) && (numero <= 28 && numero <= 21)){
+            var ultimoDia = "Entró por el Case 28"
+            document.write (ultimoDia);
+            console.log(ultimoDia);
+        }
+        break;
+
+        case 29:
+        if ((dia == 5 ) && (numero <= 29 && numero <= 22)){
+            var ultimoDia = "Entró por el Case 29";
+            document.write (ultimoDia);
+            console.log(ultimoDia);
+        break;
+        }
+
+        case 30:
+            if ((dia == 5 ) && (numero <= 30 && numero <= 23)){
+                var ultimoDia = "Entró por el Case 30";
+                document.write (ultimoDia);
+                console.log(ultimoDia);
+                break;
+            }
+
+        case 31:
+        if ((dia == 5 ) && (numero <= 30 && numero <= 24)){
+            var ultimoDia = "Entró por el Case 31";
+            document.write (ultimoDia);
+            console.log(ultimoDia);
+            break;
+        }
+    
+        default:
+            document.write ("Hubo un error en el switch");
+            console.log(ultimoDia);
+            break;
+    }      
+
+    </script>
+    <!-- <script src="script.js" ></script>         -->
+</body>
+</html>
